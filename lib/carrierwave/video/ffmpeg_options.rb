@@ -5,13 +5,13 @@ module CarrierWave
 
       def initialize(format, options)
         @format = format.to_s
-        @resolution = options[:resolution] || "640x360"
+        @resolution = options[:resolution]
         @custom = options[:custom]
         @callbacks = options[:callbacks] || {}
         @logger = options[:logger]
         @unparsed = options
         @progress = options[:progress]
-        @preserve_aspect_ratio = options[:preserve_aspect_ratio] || :width
+        @preserve_aspect_ratio = options[:preserve_aspect_ratio]
 
         @format_options = defaults.merge(options)
       end
